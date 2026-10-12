@@ -31,7 +31,11 @@ app.post('/', (req, res) => {
   res.status(200).end();
 });
 
+app.get('/health', (_req, res) => {
+  res.status(200).send('ok');
+});
+
 // Start the server
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
   console.log(`\nListening on port ${port}\n`);
 });
